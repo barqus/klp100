@@ -2,12 +2,11 @@
 import Radar from "./components/radar/Radar2";
 import seaImage from "./sea.jpg";
 import mapImage from "./eu_outline.png";
-import { ReactComponent as ReactLogo } from "./logo.svg";
 import map1 from "./map1.jpg";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import ImageMagnifier from "./components/ImageMagnifier.js";
 // import { languageOptions } from "./languages";
-import { Text, LanguageContext } from "./components/containers/Language";
+import { Text } from "./components/containers/Language";
 import { LanguageProvider } from "./components/containers/Language";
 import LanguageSelector from "./components/containers/LanguageSelector";
 import useSound from "use-sound";

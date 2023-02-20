@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Dot from "./Dot";
+// import Dot from "./Dot";
 import "./radar2.css";
 
 const Radar = () => {
-  const [isShown1, setIsShown1] = useState(false);
-  const [isShown2, setIsShown2] = useState(false);
-  const [isShown3, setIsShown3] = useState(false);
+  // const [isShown1, setIsShown1] = useState(false);
+  // const [isShown2, setIsShown2] = useState(false);
+  // const [isShown3, setIsShown3] = useState(false);
   const [isShown4, setIsShown4] = useState(false);
 
   return (
