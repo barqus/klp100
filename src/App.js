@@ -17,6 +17,8 @@ import { ReactComponent as KLPLogo } from "./logo.svg";
 // TODO: FIX MOBILE
 // TODO: UPDATE LOGO
 // TODO: jump to content on click
+// TODO: modal close outside when screen is small not workiing/ navbaras uzstoja
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState(null);
