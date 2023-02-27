@@ -6,7 +6,8 @@ function ImageMagnifier({
   height,
   magnifierHeight = 200,
   magnifieWidth = 200,
-  zoomLevel = 1.5
+  zoomLevel = 1.5,
+  closeModal,
 }) {
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);

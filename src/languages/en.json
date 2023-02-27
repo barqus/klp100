@@ -1,4 +1,15 @@
 {
     "listenButton": "....",
-    "mainTitle": "...."
+    "mainTitle": "....",
+    "firstButton": "1. ... ⟶",
+    "secondButton": "2. ... ⟶",
+    "thirdButton": "3. ... ⟶",
+    "forthButton": "4. ... ⟶",
+    "firstSectionTitle": ".....",
+    "firstSectionDescription": [
+        "....",
+        "....",
+        "...."
+    ],
+    "firstSectionImageDescription": ""
 }

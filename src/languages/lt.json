@@ -4,5 +4,12 @@
     "firstButton": "1. IKI 1923 SAUSIO ⟶",
     "secondButton": "2. PRANCŪZMETIS ⟶",
     "thirdButton": "3. KLAIPĖDOS OPERACIJA ⟶",
-    "forthButton": "4. LEGALIZAVIMAS ⟶"
+    "forthButton": "4. LEGALIZAVIMAS ⟶",
+    "firstSectionTitle": "PRŪSIJOS PRIEŠISTORĖS ŽEMĖLAPIS",
+    "firstSectionDescription": [
+        "K. Hennenbergerio sudarytas Prūsijos priešistorės žemėlapis Das Preussenlandes Ausstellung nach dem alten Namen, an Wassern, Stroemen, Seen...",
+        "[Prūsijos krašto suskirstymas pagal senuosius vietovardžius,vandens telkinius, upes, jūras...].",
+        "Karaliaučius: 1584"
+    ],
+    "firstSectionImageDescription": "Mažosios Lietuvos istorijos muziejus."
 }

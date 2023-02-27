@@ -2,8 +2,8 @@
 import Radar from "./components/radar/Radar2";
 import seaImage from "./sea.jpg";
 import mapImage from "./eu_outline.png";
-import map1 from "./map1.jpg";
-import React, { useState } from "react";
+import map1 from "./images/first.png";
+import React, { useState, useEffect } from "react";
 import ImageMagnifier from "./components/ImageMagnifier.js";
 // import { languageOptions } from "./languages";
 import { Text } from "./components/containers/Language";
@@ -12,14 +12,25 @@ import LanguageSelector from "./components/containers/LanguageSelector";
 import useSound from "use-sound";
 import seaSfx from "./sea.wav";
 import { ReactComponent as KLPLogo } from "./logo.svg";
+import Section from "./components/Section";
 
 // TODO: SUZIURET SU RADARO RESPONSABILITY
 // TODO: FIX MOBILE
 // TODO: UPDATE LOGO
 // TODO: jump to content on click
 // TODO: modal close outside when screen is small not workiing/ navbaras uzstoja
-
+// TODO: FIX IMAGE MAIN MAP SIZIONG TO USE vw/vh
 function App() {
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setShowModal(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState(null);
   const [modalTitle, setModalTitle] = useState(null);
@@ -39,8 +50,7 @@ function App() {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     height: "780px",
-    width:"980px",
-    
+    width: "980px",
   };
 
   const setModal = (image, title) => {
@@ -98,7 +108,6 @@ function App() {
             </div>
           </div>
         </nav>
-
         <div className=" text-white " style={backgroundImageStyle}>
           <div
             className="pl-20 py-6"
@@ -138,7 +147,7 @@ function App() {
             </svg>
           </div>
         </div>
-
+        {/* RADAR */}
         <div className="">
           <div className="flex justify-end">
             <div className="py-16 mr-24">
@@ -146,12 +155,9 @@ function App() {
                 <Radar />
               </div>
             </div>
-            
-            <div
-              className="text-white "
-              style={backgroundMAPImageStyle}
-            >
-              {/* <div
+
+            <div className="text-white " style={backgroundMAPImageStyle}>
+              <div
                 style={{
                   opacity: "100%",
                   border: "10px solid #2042c0",
@@ -162,7 +168,7 @@ function App() {
                   top: "0",
                   left: "0",
                 }}
-              ></div> */}
+              ></div>
             </div>
           </div>
         </div>
@@ -199,6 +205,7 @@ function App() {
           </div>
         </div> */}
 
+        {/* BUTTONS */}
         <div className="px-24 py-16">
           <div className="grid grid-cols-4 gap-4 text-slate-600">
             <div className="flex justify-center">
@@ -236,57 +243,113 @@ function App() {
           </div>
         </div>
 
-        <div className="px-24 py-16">
-          <div className="grid grid-cols-2 gap-4 text-slate-600">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Share what you love</h3>
-              <p className="text-lg">
-                Indulge your love for design when you host Airbnb guests, who
-                are drawn to authentic travel in creatively curated spaces.
-              </p>
-            </div>
+        <Section
+          image={map1}
+          title="firstSectionTitle"
+          description="firstSectionDescription"
+          imageDescription="firstSectionImageDescription"
+          layout="1"
+        />
 
+        <Section
+          image={map1}
+          title="firstSectionTitle"
+          description="firstSectionDescription"
+          imageDescription="firstSectionImageDescription"
+          layout="2"
+        />
+
+        <Section
+          image={map1}
+          title="firstSectionTitle"
+          description="firstSectionDescription"
+          imageDescription="firstSectionImageDescription"
+          layout="1"
+        />
+
+        <Section
+          image={map1}
+          title="firstSectionTitle"
+          description="firstSectionDescription"
+          imageDescription="firstSectionImageDescription"
+          layout="2"
+        />
+        {/* <div className="px-24 py-16">
+          <div className="grid grid-cols-2 gap-4 text-slate-600">
             <div className="flex justify-end">
               <img
                 className="cursor-pointer"
                 src={map1}
                 alt="map 1"
-                onClick={() => setModal(map1, "test")}
+                onClick={() => setModal(map1, "firstSectionTitle")}
               />
             </div>
-          </div>
-        </div>
-      </div>
 
-      {showModal ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-[#f4faf8] outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-3 border-b border-solid border-slate-200 rounded-t">
-                  <span className="mt-2">{modalTitle.toUpperCase()}</span>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      X
-                    </span>
-                  </button>
+            <div className="flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  <Text tid="firstSectionTitle" />
+                </h3>
+                <p className="text-lg">
+                  <Text tid="firstSectionDescription" />
+                </p>
+              </div>
+
+              <div className="flex flex-row items-center justify-between">
+                <div className="w-2/5">
+                  <div
+                    style={{
+                      border: "1px solid #6F805A",
+                      transform: "rotate(-180deg)",
+                    }}
+                  ></div>
                 </div>
-                {/*body*/}
-                <div className="relative flex-auto">
-                  {/* <img className="cursor-pointer" src={image} alt="map 1" /> */}
-                  <ImageMagnifier src={image} />
+                <div>
+                  <Text tid="firstImageDescription" />
                 </div>
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </div> */}
+      </div>
+
+      {/* {showModal ? (
+        <>
+          <div
+            style={{
+              zIndex: "1000",
+            }}
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+          >
+            <div className="">
+              <div className="border-0 rounded-lg bg-[#f4faf8] text-2xl font-mono">
+                <div className="flex items-start justify-between p-3 border-b border-solid border-slate-200 rounded-t">
+                  <span className="mt-2 text-[#2042c0] ">
+                    <Text tid={modalTitle} />
+                  </span>
+                  <button
+                    className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <span className="text-3xl bg-transparent text-[#2042c0] h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ✕
+                    </span>
+                  </button>
+                </div>
+                <div className="">
+                  <ImageMagnifier src={image} width="105vh" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              zIndex: "900",
+            }}
+            className="opacity-50 fixed inset-0 z-40 bg-black"
+          ></div>
         </>
-      ) : null}
+      ) : null} */}
     </LanguageProvider>
   );
 }

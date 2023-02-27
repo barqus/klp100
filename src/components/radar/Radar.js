@@ -14,7 +14,8 @@ const Radar = () => {
         <div className="pointer">
           <div></div>
         </div>
-        <Dot className='dot1'/>
+        {/* <Dot className='dot1'/> */}
+        {/* <Dot className='dot1'/> */}
       </div>
     </div>
   )
